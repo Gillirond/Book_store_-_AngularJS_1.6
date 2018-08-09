@@ -1,0 +1,20 @@
+<div>
+    <a href="#!cart" class="goCartA"><button class="goCartBtn">Shopping cart</button></a>
+    <div class="books">
+        <div ng-repeat="book in books" class="book">
+            <div ng-style="backgroundLightStyle(book.img)"></div>
+            <img class="book-img" ng-src="{{pathToImgFolder}}{{book.img}}"/>
+            <div class="book-name">{{book.name}}</div>
+            <div class="book-author">{{book.author}}</div>
+            <div class="book-year">{{book.year}}</div>
+            <div class="clear"></div>
+            <div class="book-description"><b>Description:</b> {{book.description}}</div>
+            <div class="book-edition-publisher">Publisher: {{book.edition.publisher}}</div>
+            <div class="book-edition-year">Published: {{book.edition.year}}</div>
+            <div class="book-edition-pages">Pages: {{book.edition.pages}}p.</div>
+            <div class="book-edition-price">Price: {{book.edition.price}} grn</div>
+            <button class="addToCartBtn" ng-click="addToCart(book.id)">Add to cart</button>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>

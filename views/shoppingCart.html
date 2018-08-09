@@ -1,0 +1,27 @@
+<a href="#!catalog" class="goCatalogA"><button class="goCatalogBtn">To catalogue</button></a>
+<div class="cart">
+    <div class="cart-container-left"  ng-class="showMenuClass">
+        <div class="cart-empty" ng-if="isEmpty()">Your book cart is empty.</br>First, choose a book that you like</div>
+        <div class="wish" ng-repeat="item in wishList">
+            <img class="wish-img" ng-src="{{pathToImgFolder}}{{books[getBookIndexById(item.id)].img}}" />
+            <div class="wish-name">{{books[getBookIndexById(item.id)].name}}</div>
+            <div class="wish-author">{{books[getBookIndexById(item.id)].author}}</div>
+            <div class="wish-price">{{books[getBookIndexById(item.id)].edition.price}} grn *</div>
+            <button class="wish-minus" ng-click="minus1Item($index)">-</button>
+            <button class="wish-plus" ng-click="plus1Item($index)">+</button>
+            <input class="wish-quantity" numbers-only ng-model="item.quantity"/>
+            <button class="wish-remove" ng-click="removeFromCart(item.id)"><span>Remove this book</span></button>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="cart-container-right" ng-class="showMenuClass">
+        <div ng-style="backgroundLightStyle('cont-right.jpeg')"></div>
+        <div class="cart-menu-toggler" ng-click="showMenuClass=((showMenuClass==''|| !showMenuClass)?'cart-small':'')"></div>
+        <div class="cart-title">Welcome to the Store!</div>
+        <div class="cart-quantity" ng-if="!isEmpty()">Books total {{totalQuantity()}}</div>
+        <div class="cart-price" ng-if="!isEmpty()">Price total {{totalPrice()}}</div>
+        <button class="cart-clear-btn" ng-if="!isEmpty()" ng-click="clearCart()">Clear all books from cart!</button>
+        <button class="cart-pay-btn" ng-if="!isEmpty()" ng-click="payCart()">Go to payment</button>
+    </div>
+    <div class="clear"></div>
+</div>

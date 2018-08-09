@@ -1,0 +1,410 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+
+.header-pic {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bolder;
+    background-color: #86a0c3;
+    vertical-align: middle;
+    padding: 0px 0 0px 15%;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    overflow: hidden;
+    line-height: 50px;
+}
+.header-pic:before {
+    content:"";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 80%;
+    bottom: 0;
+    background: #26649f;
+    height: 4px;
+    -webkit-transition-property: right, left;
+    transition-property: right, left;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.header-pic:after {
+    content:"";
+    position: absolute;
+    z-index: -1;
+    left: 45%;
+    right: 20%;
+    top: 0;
+    background: #26649f;
+    height: 6px;
+    -webkit-transition-property: right, left;
+    transition-property: right, left;
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.header-pic:hover:before, .header-pic:focus:before, .header-pic:active:before {
+    right: 0;
+    left: 15%;
+}
+.header-pic:hover:after, .header-pic:focus:after, .header-pic:active:after {
+    left: 80%;
+    right: 10%;
+}
+
+.goCartA {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.goCartBtn {
+    padding: 5px 5px 5px 25px;
+    background-image: url('http://localhost/Book store - AngularJS 1.6/img/cart.png');
+    background-repeat: no-repeat;
+    background-position-x: 5px;
+    background-position-y: center;
+    background-size: 15px 15px;
+    border-radius: 5px;
+    height: 30px;
+    width: 9em;
+}
+
+.goCatalogA {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: +1;
+}
+
+.goCatalogBtn {
+    padding: 5px 5px 5px 25px;
+    background-image: url('http://localhost/Book store - AngularJS 1.6/img/catalog.ico');
+    background-repeat: no-repeat;
+    background-position-x: 5px;
+    background-position-y: center;
+    background-size: 15px 15px;
+    border-radius: 5px;
+    height: 30px;
+    width: 9em;
+}
+
+.book {
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    margin: 15px 5px 5px 5px;
+    padding: 5px 5px 15px 5px;
+}
+.book:first-child {
+    margin-top: 10px;
+}
+
+.book-img {
+    width: 30%;
+    float: left;
+    padding: 5px;
+}
+
+.book-name {
+    text-align: right;
+    margin: 10px 5px 2px 5px;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.book-author {
+    text-align: right;
+    margin: 2px 15px 2px 5px;
+    font-size: large;
+    font-weight: 600;
+}
+
+.book-year {
+    text-align: right;
+    margin: 2px 25px 5px 5px;
+    font-size: large;
+    font-weight: 500;
+}
+
+.book-description {
+    text-align: justify;
+    margin: 20px 0px 20px 0px;
+}
+
+.book-edition-publisher {
+
+}
+
+.book-edition-year {
+
+}
+
+.book-edition-pages {
+    margin: 0px 0px 20px 0px;
+}
+
+.book-edition-price {
+    float: left;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.addToCartBtn {
+    float: right;
+    padding: 5px;
+    margin: 0px 30px 0px 0px;
+    color: black;
+    background-color: white;
+    border: 2px solid #0099CC;
+    border-radius: 6px;
+    z-index: +1;
+
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.addToCartBtn:hover {
+    background-color: #0099CC;
+    color: white;
+}
+
+
+
+.cart {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 50px;
+    bottom: 0;
+    overflow: auto;
+}
+
+
+.cart-container-left {
+    width: 60%;
+    height: 100%;
+    overflow: auto;
+
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    -webkit-transition-property: width;
+    transition-property: width;
+}
+
+.cart-container-right {
+    width: 40%;
+    height: 100%;
+    margin: 0 0 0 60%;
+    border-left: 2px solid black;
+    position: fixed;
+    right: 0px;
+    top: 50px;
+
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    -webkit-transition-property: width;
+    transition-property: width;
+}
+
+.cart-container-right.cart-small, .cart-container-right.cart-small-add.cart-small-add-active {
+    width: 8%;
+    min-width: 35px;
+}
+.cart-container-right.cart-small-remove.cart-small-remove-active {
+    width: 40%;
+}
+.cart-container-left.cart-small, .cart-container-left.cart-small-add.cart-small-add-active {
+    width: 92%;
+    margin-right: 35px;
+}
+.cart-container-left.cart-small-remove.cart-small-remove-active {
+    width: 60%;
+}
+.cart-small.cart-container-right .cart-title, .cart-small.cart-container-right .cart-quantity, .cart-small.cart-container-right .cart-price, .cart-small.cart-container-right .cart-clear-btn, .cart-small.cart-container-right .cart-pay-btn {
+    display: none;
+}
+.cart-small.cart-container-right .cart-menu-toggler {
+    background-image: url('http://localhost/Book store - AngularJS 1.6/img/Menu-1.png');
+}
+
+
+.cart-empty {
+    text-align: center;
+    line-height: 10vh;
+    font-weight: 600;
+    font-size: 3.5vw;
+    margin: 20vh 10vw 20vh 10vw;
+}
+
+.wish {
+    margin: 15px 0px 5px 5px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: -8px 0px 4px 2px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.wish-img {
+    float: left;
+    min-width: 40%;
+    width: 200px;
+    max-width: 90%;
+    padding: 5px;
+}
+
+.wish-name {
+    text-align: center;
+    font-weight: bolder;
+    font-size: x-large;
+    margin: 0 0 10% 0;
+}
+
+.wish-author {
+    text-align: center;
+    font-weight: 600;
+    font-size: large;
+    margin: 10% 0 10% 0;
+}
+
+.wish-price {
+    font-weight: 500;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.wish-minus {
+    position: relative;
+    top: 6px;
+    line-height: 6px;
+    height: 13px;
+    width: 13px;
+    text-align: center;
+}
+.wish-plus {
+    position: relative;
+    top: -6px;
+    right: 17px;
+    line-height: 6px;
+    height: 13px;
+    width: 13px;
+    text-align: center;
+}
+
+.wish-quantity {
+    text-align: center;
+    width: 20px;
+    margin: 0 0 0 -20px;
+}
+
+.wish-remove {
+    margin: 10% 10px 10px 10px;
+    box-sizing: content-box;
+    font-size: 14px;
+    padding: 8px 12px;
+    cursor: pointer;
+    width: 140px;
+    transition: all 0.5s;
+    text-align: center;
+}
+.wish-remove span {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.5s;
+}
+.wish-remove span:after {
+    content: '';
+    background-image: url('http://localhost/Book store - AngularJS 1.6/img/remove.ico');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    opacity: 0;
+    top: 2px;
+    right: -20px;
+    transition: 0.5s;
+}
+.wish-remove:hover span {
+    padding-right: 25px;
+}
+.wish-remove:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.cart-menu-toggler {
+    width: 25px;
+    height: 25px;
+    background-color: rgba(256,256,256,.3);
+    background-image: url('http://localhost/Book store - AngularJS 1.6/img/Menu-2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    float: right;
+    margin: 10px;
+}
+
+.cart-title {
+    clear: both;
+    margin: 20% 5px 20% 5px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.cart-quantity {
+    margin: 20% 20% 10% 20%;
+    text-align: center;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.cart-price {
+    margin: 10% 20% 10% 20%;
+    text-align: center;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.cart-clear-btn {
+    margin: 10px 20% 10% 20%;
+    width: 60%;
+    height: auto;
+    padding: 5px;
+    z-index: +1;
+}
+
+.cart-pay-btn {
+    margin: 10% 20% 15% 20%;
+    width: 60%;
+    height: 20%;
+    font-size: 120%;
+    vertical-align: center;
+    z-index: +1;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.cart-pay-btn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
