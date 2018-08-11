@@ -7,6 +7,9 @@
     clear: both;
 }
 
+body {
+    min-width: 350px;
+}
 
 .header-pic {
     text-decoration: none;
@@ -196,14 +199,14 @@
     right: 0;
     top: 50px;
     bottom: 0;
-    overflow: auto;
 }
 
 
 .cart-container-left {
     width: 60%;
     height: 100%;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
@@ -265,25 +268,30 @@
 }
 
 .wish-img {
-    float: left;
-    min-width: 40%;
-    width: 200px;
-    max-width: 90%;
+    max-width: 320px;
+    width: 90%;
     padding: 5px;
+}
+@media only screen and (min-width : 730px) {
+    .wish-img {
+        float: left;
+        min-width: 40%;
+        width: 200px;
+        max-width: 90%;
+        padding: 5px;
+    }
 }
 
 .wish-name {
-    text-align: center;
     font-weight: bolder;
     font-size: x-large;
-    margin: 0 0 10% 0;
+    margin: 0 0 40px 0;
 }
 
 .wish-author {
-    text-align: center;
     font-weight: 600;
     font-size: large;
-    margin: 10% 0 10% 0;
+    margin: 40px 0 40px 0;
 }
 
 .wish-price {
@@ -317,7 +325,7 @@
 }
 
 .wish-remove {
-    margin: 10% 10px 10px 10px;
+    margin: 40px 50% 10px 50%;
     box-sizing: content-box;
     font-size: 14px;
     padding: 8px 12px;
@@ -325,6 +333,16 @@
     width: 140px;
     transition: all 0.5s;
     text-align: center;
+    display: block;
+    position: relative;
+    left: -85px;
+}
+@media only screen and (min-width : 730px) {
+    .wish-remove {
+        margin: 40px 10px 10px 10px;
+        display: inline-block;
+        position: static;
+    }
 }
 .wish-remove span {
     position: relative;
